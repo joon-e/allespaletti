@@ -17,3 +17,5 @@ RoxygenNote: 7.1.0
 Imports: 
     glue,
     ggplot2
+URL: https://github.com/joon-e/allespaletti
+BugReports: https://github.com/joon-e/allespaletti/issues
