@@ -92,8 +92,3 @@ scale_fill_tol <- function(palette = "vibrant",
                           ...)
 
 }
-
-
-ggplot2::ggplot(ggplot2::diamonds, ggplot2::aes(clarity, fill = cut)) +
-  ggplot2::geom_bar() +
-  scale_fill_tol("vibrant")
