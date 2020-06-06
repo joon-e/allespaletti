@@ -12,13 +12,13 @@ comm_palettes <- list(
           black = "#000000")
 )
 
-get_palette_comm <- function(palette = "ica", reverse = FALSE, order = NULL) {
+get_palette_comm <- function(palette = "ica", reverse = FALSE, select = NULL) {
 
   # Extract palette
   pal <- comm_palettes[[palette]]
 
-  # Custom order
-  if (!is.null(order)) pal <- pal[order]
+  # Custom select
+  if (!is.null(select)) pal <- pal[select]
 
   # Reverse
   if (reverse) pal <- rev(pal)
@@ -35,9 +35,9 @@ get_palette_comm <- function(palette = "ica", reverse = FALSE, order = NULL) {
 }
 
 scale_colour_comm <- function(palette = "ica",
-                              reverse = FALSE, order = NULL, ...) {
+                              reverse = FALSE, select = NULL, ...) {
   ggplot2::discrete_scale("colour", palette,
-                          palette = get_palette_comm(palette, reverse, order),
+                          palette = get_palette_comm(palette, reverse, select),
                           ...)
 
 }
@@ -45,9 +45,9 @@ scale_colour_comm <- function(palette = "ica",
 scale_color_comm <- scale_colour_comm
 
 scale_fill_comm <- function(palette = "ica",
-                            reverse = FALSE, order = NULL, ...) {
+                            reverse = FALSE, select = NULL, ...) {
   ggplot2::discrete_scale("fill", palette,
-                          palette = get_palette_comm(palette, reverse, order),
+                          palette = get_palette_comm(palette, reverse, select),
                           ...)
 
 }

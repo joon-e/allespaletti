@@ -28,13 +28,13 @@ politics_palettes <- list(
           independent = "#DDDDDD")
 )
 
-get_palette_politics <- function(palette = "german", reverse = FALSE, order = NULL) {
+get_palette_politics <- function(palette = "german", reverse = FALSE, select = NULL) {
 
   # Extract palette
   pal <- politics_palettes[[palette]]
 
-  # Custom order
-  if (!is.null(order)) pal <- pal[order]
+  # Custom select
+  if (!is.null(select)) pal <- pal[select]
 
   # Reverse
   if (reverse) pal <- rev(pal)
@@ -51,9 +51,9 @@ get_palette_politics <- function(palette = "german", reverse = FALSE, order = NU
 }
 
 scale_colour_politics <- function(palette = "german",
-                              reverse = FALSE, order = NULL, ...) {
+                              reverse = FALSE, select = NULL, ...) {
   ggplot2::discrete_scale("colour", palette,
-                          palette = get_palette_politics(palette, reverse, order),
+                          palette = get_palette_politics(palette, reverse, select),
                           ...)
 
 }
@@ -61,9 +61,9 @@ scale_colour_politics <- function(palette = "german",
 scale_color_politics <- scale_colour_politics
 
 scale_fill_politics <- function(palette = "german",
-                            reverse = FALSE, order = NULL, ...) {
+                            reverse = FALSE, select = NULL, ...) {
   ggplot2::discrete_scale("fill", palette,
-                          palette = get_palette_politics(palette, reverse, order),
+                          palette = get_palette_politics(palette, reverse, select),
                           ...)
 
 }

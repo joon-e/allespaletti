@@ -36,7 +36,7 @@ tol_palettes <- list(
            grey = "#DDDDDD"),
   dark = c(blue = "#222255",
            cyan = "#225555",
-           green = "#666633",
+           green = "#225522",
            yellow = "#666633",
            red = "#663333",
            grey = "#555555"),
@@ -60,7 +60,8 @@ tol_palettes <- list(
 )
 
 
-get_palette_tol <- function(palette = "vibrant", reverse = FALSE, order = NULL,
+
+get_palette_tol <- function(palette = "vibrant", reverse = FALSE, select = NULL,
                             discrete = TRUE, ...) {
 
   # Extract palette
@@ -70,8 +71,8 @@ get_palette_tol <- function(palette = "vibrant", reverse = FALSE, order = NULL,
 
   }
 
-  # Custom order
-  if (!is.null(order)) pal <- pal[order]
+  # Custom select
+  if (!is.null(select)) pal <- pal[select]
 
   # Reverse
   if (reverse) pal <- rev(pal)
@@ -100,13 +101,13 @@ get_palette_tol <- function(palette = "vibrant", reverse = FALSE, order = NULL,
 
 
 scale_colour_tol <- function(palette = "vibrant",
-                            reverse = FALSE, order = NULL, discrete = TRUE, ...) {
+                            reverse = FALSE, select = NULL, discrete = TRUE, ...) {
   if (discrete) {
     ggplot2::discrete_scale("colour", palette,
-                            palette = get_palette_tol(palette, reverse, order, discrete),
+                            palette = get_palette_tol(palette, reverse, select, discrete),
                             ...)
   } else {
-    ggplot2::scale_color_gradientn(colours = get_palette_tol(palette, reverse, order,
+    ggplot2::scale_color_gradientn(colours = get_palette_tol(palette, reverse, select,
                                                             discrete)(256))
   }
 
@@ -115,13 +116,13 @@ scale_colour_tol <- function(palette = "vibrant",
 scale_color_tol <- scale_colour_tol
 
 scale_fill_tol <- function(palette = "vibrant",
-                           reverse = FALSE, order = NULL, discrete = TRUE, ...) {
+                           reverse = FALSE, select = NULL, discrete = TRUE, ...) {
   if (discrete) {
     ggplot2::discrete_scale("fill", palette,
-                            palette = get_palette_tol(palette, reverse, order, discrete),
+                            palette = get_palette_tol(palette, reverse, select, discrete),
                             ...)
   } else {
-    ggplot2::scale_fill_gradientn(colours = get_palette_tol(palette, reverse, order,
+    ggplot2::scale_fill_gradientn(colours = get_palette_tol(palette, reverse, select,
                                                              discrete)(256))
   }
 

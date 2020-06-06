@@ -22,13 +22,13 @@ sns_palettes <- list(
           )
 )
 
-get_palette_sns <- function(palette = "sns", reverse = FALSE, order = NULL) {
+get_palette_sns <- function(palette = "sns", reverse = FALSE, select = NULL) {
 
   # Extract palette
   pal <- sns_palettes[[palette]]
 
-  # Custom order
-  if (!is.null(order)) pal <- pal[order]
+  # Custom select
+  if (!is.null(select)) pal <- pal[select]
 
   # Reverse
   if (reverse) pal <- rev(pal)
@@ -45,9 +45,9 @@ get_palette_sns <- function(palette = "sns", reverse = FALSE, order = NULL) {
 }
 
 scale_colour_sns <- function(palette = "sns",
-                              reverse = FALSE, order = NULL, ...) {
+                              reverse = FALSE, select = NULL, ...) {
   ggplot2::discrete_scale("colour", palette,
-                          palette = get_palette_sns(palette, reverse, order),
+                          palette = get_palette_sns(palette, reverse, select),
                           ...)
 
 }
@@ -55,9 +55,9 @@ scale_colour_sns <- function(palette = "sns",
 scale_color_sns <- scale_colour_sns
 
 scale_fill_sns <- function(palette = "sns",
-                            reverse = FALSE, order = NULL, ...) {
+                            reverse = FALSE, select = NULL, ...) {
   ggplot2::discrete_scale("fill", palette,
-                          palette = get_palette_sns(palette, reverse, order),
+                          palette = get_palette_sns(palette, reverse, select),
                           ...)
 
 }
