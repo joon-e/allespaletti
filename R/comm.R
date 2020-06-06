@@ -34,7 +34,7 @@ get_palette_comm <- function(palette = "ica", reverse = FALSE, order = NULL) {
 
 }
 
-scale_colour_comm <- function(palette = "vibrant",
+scale_colour_comm <- function(palette = "ica",
                               reverse = FALSE, order = NULL, ...) {
   ggplot2::discrete_scale("colour", palette,
                           palette = get_palette_comm(palette, reverse, order),
@@ -44,7 +44,7 @@ scale_colour_comm <- function(palette = "vibrant",
 
 scale_color_comm <- scale_colour_comm
 
-scale_fill_comm <- function(palette = "vibrant",
+scale_fill_comm <- function(palette = "ica",
                             reverse = FALSE, order = NULL, ...) {
   ggplot2::discrete_scale("fill", palette,
                           palette = get_palette_comm(palette, reverse, order),

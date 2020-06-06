@@ -50,7 +50,7 @@ get_palette_politics <- function(palette = "german", reverse = FALSE, order = NU
 
 }
 
-scale_colour_politics <- function(palette = "vibrant",
+scale_colour_politics <- function(palette = "german",
                               reverse = FALSE, order = NULL, ...) {
   ggplot2::discrete_scale("colour", palette,
                           palette = get_palette_politics(palette, reverse, order),
@@ -60,7 +60,7 @@ scale_colour_politics <- function(palette = "vibrant",
 
 scale_color_politics <- scale_colour_politics
 
-scale_fill_politics <- function(palette = "vibrant",
+scale_fill_politics <- function(palette = "german",
                             reverse = FALSE, order = NULL, ...) {
   ggplot2::discrete_scale("fill", palette,
                           palette = get_palette_politics(palette, reverse, order),
