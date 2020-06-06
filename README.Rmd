@@ -1,0 +1,160 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%",
+  fig.width=12, 
+  fig.height=3
+)
+```
+
+# allespaletti
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+`allespaletti` contains various color palettes I find useful, particularly for communication research. This includes palettes for:
+
+- beautiful plots both color-blind- and printer-friendly
+- political parties
+- social networking sites 
+- communication associations
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+devtools::load_all(".")
+```
+
+## Installation
+
+Install from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("remotes")
+remotes::install_github("joon-e/allespaletti")
+```
+## Use
+
+Load the package:
+
+```{r eval=FALSE}
+library(allespaletti)
+```
+
+Palettes can then be added to `ggplot2` objects using custom `scale_fill_xxx` / `scale_color_xxx` functions. See below for all available palettes:
+
+```{r, fig.height=6}
+library(ggplot2)
+diamonds %>% 
+  ggplot(aes(x = cut, fill = cut)) +
+  geom_bar() + 
+  scale_fill_tol()
+```
+
+Use `reverse = TRUE` to plot colors in reverse order or pass a vector of color names (see below) to `select` to create a custom order (useful for palettes with _meaningful_ colors like political party or sns colors):
+
+```{r, echo=FALSE}
+sns <- c("Facebook", "YouTube", "WhatsApp", "Instagram")
+
+sns_users_april_2020 <- data.frame(
+  sns = factor(sns, sns, sns),
+  users = c(2498, 2000, 2000, 1000)
+)
+```
+
+```{r, fig.height=6}
+ggplot(sns_users_april_2020, aes(x = sns, y = users, fill = sns)) +
+  geom_col() +
+  scale_fill_sns(select = c("facebook", "youtube", "whatsapp", "instagram")) +
+  labs(x = NULL, y = "Users (in millions)") +
+  theme(legend.position = "none")
+```
+
+
+## Palettes
+
+Plot title shows the palette name that can be passed to the respective `scale_fill_` / `scale_color_` function; printed color names can be used for the `select` argument.
+
+### Paul Tol's color schemes
+
+[Paul Tol](https://personal.sron.nl/~pault/) developed various qualitative, sequential, and divergent color schemes that both beautiful and distinct for most people (e.g., various forms of color-blindness) and situations (screen, print-out, black and white copy).
+
+The following palettes are available for `scale_fill_tol()` / `scale_color_tol()`:
+
+#### Qualitative palettes
+
+```{r tolqual, echo = FALSE}
+display_palette(tol_palettes, "bright")
+display_palette(tol_palettes, "high_contrast")
+display_palette(tol_palettes, "vibrant")
+display_palette(tol_palettes, "muted")
+display_palette(tol_palettes, "pale")
+display_palette(tol_palettes, "dark")
+display_palette(tol_palettes, "light")
+```
+
+#### Diverging palettes
+
+Use `discrete = FALSE` in the call to `scale_fill_tol()` / `scale_color_tol()` to use these scales for continouos data.
+
+```{r toldiv, echo = FALSE}
+display_palette(tol_palettes, "sunset")
+display_palette(tol_palettes, "BuRd")
+display_palette(tol_palettes, "PRGn")
+```
+
+#### Sequential palettes
+
+Use `discrete = FALSE` in the call to `scale_fill_tol()` / `scale_color_tol()` to use these scales for continouos data.
+
+```{r tolseq, echo = FALSE}
+display_palette(tol_palettes, "YlOrBr")
+```
+
+### Politics
+
+Palettes containing colors of political parties. 
+
+The following palettes are available for `scale_fill_politics()` / `scale_color_politics()`:
+
+#### German parties
+
+```{r polger, echo = FALSE}
+display_palette(politics_palettes, "german")
+display_palette(politics_palettes, "german2")
+display_palette(politics_palettes, "fckafd")
+```
+
+#### US parties
+
+```{r polus, echo = FALSE}
+display_palette(politics_palettes, "us")
+display_palette(politics_palettes, "us2")
+```
+
+### Social networking sites
+
+Palettes containing colors of social networking sites. 
+
+The following palettes are available for `scale_fill_sns()` / `scale_color_sns()`:
+
+```{r sns, echo = FALSE}
+display_palette(sns_palettes, "sns")
+```
+
+### Communication associations
+
+Palettes containing colors of communication associations. 
+
+The following palettes are available for `scale_fill_comm()` / `scale_color_comm()`:
+
+```{r comm, echo = FALSE}
+display_palette(comm_palettes, "ica")
+display_palette(comm_palettes, "dgpuk")
+```
