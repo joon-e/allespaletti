@@ -47,7 +47,7 @@ Load the package:
 library(allespaletti)
 ```
 
-Palettes can then be added to `ggplot2` objects using custom `scale_fill_xxx` / `scale_color_xxx` functions. See below for all available palettes:
+Palettes can then be added to `ggplot2` objects using custom `scale_fill_xxx` / `scale_color_xxx` functions. Add the palette name as the first argument. See below for all available palettes.
 
 ```{r, fig.height=6}
 library(ggplot2)
@@ -133,6 +133,7 @@ The following palettes are available for `scale_fill_politics()` / `scale_color_
 display_palette(politics_palettes, "german")
 display_palette(politics_palettes, "german2")
 display_palette(politics_palettes, "fckafd")
+display_palette(politics_palettes, "fckafd2")
 ```
 
 #### US parties

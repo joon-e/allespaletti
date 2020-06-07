@@ -33,8 +33,8 @@ library(allespaletti)
 ```
 
 Palettes can then be added to `ggplot2` objects using custom
-`scale_fill_xxx` / `scale_color_xxx` functions. See below for all
-available palettes:
+`scale_fill_xxx` / `scale_color_xxx` functions. Add the palette name as
+the first argument. See below for all available palettes.
 
 ``` r
 library(ggplot2)
@@ -104,7 +104,7 @@ The following palettes are available for `scale_fill_politics()` /
 
 #### German parties
 
-<img src="man/figures/README-polger-1.png" width="100%" /><img src="man/figures/README-polger-2.png" width="100%" /><img src="man/figures/README-polger-3.png" width="100%" />
+<img src="man/figures/README-polger-1.png" width="100%" /><img src="man/figures/README-polger-2.png" width="100%" /><img src="man/figures/README-polger-3.png" width="100%" /><img src="man/figures/README-polger-4.png" width="100%" />
 
 #### US parties
 
