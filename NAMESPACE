@@ -2,10 +2,13 @@
 
 export("%>%")
 export(scale_color_politics)
+export(scale_color_sns)
 export(scale_color_tol)
 export(scale_colour_politics)
+export(scale_colour_sns)
 export(scale_colour_tol)
 export(scale_fill_politics)
+export(scale_fill_sns)
 export(scale_fill_tol)
 importFrom(grDevices,colorRampPalette)
 importFrom(magrittr,"%>%")
