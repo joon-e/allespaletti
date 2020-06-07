@@ -7,7 +7,7 @@ Authors@R:
            role = c("aut", "cre"),
            email = "julian.unkel@gmail.com",
            comment = c(ORCID = "0000-0001-9568-7041"))
-Description: What the package does (one paragraph).
+Description: Useful Color Palettes for ggplot2.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
