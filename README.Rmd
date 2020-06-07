@@ -54,7 +54,7 @@ library(ggplot2)
 diamonds %>% 
   ggplot(aes(x = cut, fill = cut)) +
   geom_bar() + 
-  scale_fill_tol()
+  scale_fill_tol("vibrant")
 ```
 
 Use `reverse = TRUE` to plot colors in reverse order or pass a vector of color names (see below) to `select` to create a custom order (useful for palettes with _meaningful_ colors like political party or sns colors):
@@ -83,7 +83,7 @@ Plot title shows the palette name that can be passed to the respective `scale_fi
 
 ### Paul Tol's color schemes
 
-[Paul Tol](https://personal.sron.nl/~pault/) developed various qualitative, sequential, and divergent color schemes that both beautiful and distinct for most people (e.g., various forms of color-blindness) and situations (screen, print-out, black and white copy).
+[Paul Tol](https://personal.sron.nl/~pault/) developed various qualitative, sequential, and divergent color schemes that are both beautiful and distinct for most people (e.g., various forms of color-blindness) and situations (screen, print-out, black and white copy).
 
 The following palettes are available for `scale_fill_tol()` / `scale_color_tol()`:
 
@@ -101,7 +101,7 @@ display_palette(tol_palettes, "light")
 
 #### Diverging palettes
 
-Use `discrete = FALSE` in the call to `scale_fill_tol()` / `scale_color_tol()` to use these scales for continouos data.
+Use `discrete = FALSE` in the call to `scale_fill_tol()` / `scale_color_tol()` to use these scales for continuous data.
 
 ```{r toldiv, echo = FALSE}
 display_palette(tol_palettes, "sunset")
@@ -111,10 +111,14 @@ display_palette(tol_palettes, "PRGn")
 
 #### Sequential palettes
 
-Use `discrete = FALSE` in the call to `scale_fill_tol()` / `scale_color_tol()` to use these scales for continouos data.
+Use `discrete = FALSE` in the call to `scale_fill_tol()` / `scale_color_tol()` to use these scales for continuous data.
 
 ```{r tolseq, echo = FALSE}
 display_palette(tol_palettes, "YlOrBr")
+display_palette(tol_palettes, "iridescent")
+display_palette(tol_palettes, "rainbow14")
+display_palette(tol_palettes, "rainbow23")
+display_palette(tol_palettes, "smooth_rainbow")
 ```
 
 ### Politics

@@ -41,7 +41,7 @@ library(ggplot2)
 diamonds %>% 
   ggplot(aes(x = cut, fill = cut)) +
   geom_bar() + 
-  scale_fill_tol()
+  scale_fill_tol("vibrant")
 ```
 
 <img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
@@ -69,9 +69,10 @@ for the `select` argument.
 ### Paul Tol’s color schemes
 
 [Paul Tol](https://personal.sron.nl/~pault/) developed various
-qualitative, sequential, and divergent color schemes that both beautiful
-and distinct for most people (e.g., various forms of color-blindness)
-and situations (screen, print-out, black and white copy).
+qualitative, sequential, and divergent color schemes that are both
+beautiful and distinct for most people (e.g., various forms of
+color-blindness) and situations (screen, print-out, black and white
+copy).
 
 The following palettes are available for `scale_fill_tol()` /
 `scale_color_tol()`:
@@ -83,16 +84,16 @@ The following palettes are available for `scale_fill_tol()` /
 #### Diverging palettes
 
 Use `discrete = FALSE` in the call to `scale_fill_tol()` /
-`scale_color_tol()` to use these scales for continouos data.
+`scale_color_tol()` to use these scales for continuous data.
 
 <img src="man/figures/README-toldiv-1.png" width="100%" /><img src="man/figures/README-toldiv-2.png" width="100%" /><img src="man/figures/README-toldiv-3.png" width="100%" />
 
 #### Sequential palettes
 
 Use `discrete = FALSE` in the call to `scale_fill_tol()` /
-`scale_color_tol()` to use these scales for continouos data.
+`scale_color_tol()` to use these scales for continuous data.
 
-<img src="man/figures/README-tolseq-1.png" width="100%" />
+<img src="man/figures/README-tolseq-1.png" width="100%" /><img src="man/figures/README-tolseq-2.png" width="100%" /><img src="man/figures/README-tolseq-3.png" width="100%" /><img src="man/figures/README-tolseq-4.png" width="100%" /><img src="man/figures/README-tolseq-5.png" width="100%" />
 
 ### Politics
 
